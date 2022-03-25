@@ -12,6 +12,7 @@ var score=0;
 var jumpSound, collidedSound;
 
 var gameOver, restart;
+var donate;
 
 
 function preload(){
@@ -25,6 +26,7 @@ function preload(){
   trex_collided = loadAnimation("trex_collided.png");
   
   groundImage = loadImage("ground.png");
+  donateImage = loadImage("donate.gif");
   
   cloudImage = loadImage("cloud.png");
   
@@ -43,6 +45,9 @@ function setup() {
   sun = createSprite(width-50,100,10,10);
   sun.addAnimation("sun", sunAnimation);
   sun.scale = 0.1
+  
+  donate = createSprite(windowWidth, windowHeight);
+  donate.addImage(donateImage);
   
   trex = createSprite(50,height-70,20,50);
   
@@ -192,15 +197,8 @@ function spawnObstacles() {
 }
 
 function reset(){
-  gameState = PLAY;
   gameOver.visible = false;
   restart.visible = false;
-  
-  obstaclesGroup.destroyEach();
-  cloudsGroup.destroyEach();
-  
-  trex.changeAnimation("running",trex_running);
-  
-  score = 0;
+  donate.visible = true;
   
 }
