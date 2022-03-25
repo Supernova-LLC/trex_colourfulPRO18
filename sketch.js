@@ -26,7 +26,7 @@ function preload(){
   trex_collided = loadAnimation("trex_collided.png");
   
   groundImage = loadImage("ground.png");
-  donateImage = loadImage("donation.webm");
+  donateImage = loadImage("eeeeeeeeeeeeee.png");
   cloudImage = loadImage("cloud.png");
   
   obstacle1 = loadImage("obstacle1.png");
