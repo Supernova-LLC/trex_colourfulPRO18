@@ -14,7 +14,7 @@ var jumpSound, collidedSound;
 
 var gameOver, restart;
 var donate;
-
+var donation;
 
 function preload(){
   jumpSound = loadSound("jump.wav")
@@ -28,7 +28,7 @@ function preload(){
   
   groundImage = loadImage("ground.png");
   donateImage = loadImage("donate.gif");
-  
+  donationImage =loadImage("donation.webm")
   cloudImage = loadImage("cloud.png");
   
   obstacle1 = loadImage("obstacle1.png");
@@ -147,14 +147,14 @@ function draw() {
     }
   }
   else if(gameState === DONATE){
-    background(donateImage);
+    background(donationImage);
     gameOver.visible = false;
     restart.visible = false;
-    donate.visible = true;
+    donate.visible = false;
     ground.visible = false;
     sun.visible = false;
-    cloudsGroup.visible = false;
-    obstaclesGroup.visible = false;
+    obstaclesGroup.destroyEach();
+    cloudsGroup.destroyEach();
   }
   
   drawSprites();
