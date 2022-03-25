@@ -1,5 +1,6 @@
 var PLAY = 1;
 var END = 0;
+var DONATE = 2;
 var gameState = PLAY;
 
 var trex, trex_running, trex_collided;
@@ -46,7 +47,7 @@ function setup() {
   sun.addAnimation("sun", sunAnimation);
   sun.scale = 0.1
   
-  donate = createSprite(windowWidth, windowHeight);
+  donate = createSprite(width-100, height-100);
   donate.addImage(donateImage);
   
   trex = createSprite(50,height-70,20,50);
