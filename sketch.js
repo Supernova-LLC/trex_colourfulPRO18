@@ -122,7 +122,7 @@ function draw() {
     }
   }
   else if (gameState === END) {
-      background(backgroundImg);
+      background();
       textSize(20);
       fill("black")
       text("Score: "+ score,30,50);
