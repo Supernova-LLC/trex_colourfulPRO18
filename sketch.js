@@ -20,7 +20,7 @@ function preload(){
   jumpSound = loadSound("jump.wav")
   collidedSound = loadSound("collided.wav")
   
-  backgroundImg = loadImage("backgroundImg.png")
+  backgroundImg = loadImage("donate.gif")
   sunAnimation = loadImage("sun.png");
   
   trex_running = loadAnimation("trex_2.png","trex_1.png","trex_3.png");
