@@ -20,7 +20,7 @@ function preload(){
   jumpSound = loadSound("jump.wav")
   collidedSound = loadSound("collided.wav")
   
-  backgroundImg = loadImage("donate.gif")
+  backgroundImg = loadImage("backgroundImg.png")
   sunAnimation = loadImage("sun.png");
   
   trex_running = loadAnimation("trex_2.png","trex_1.png","trex_3.png");
@@ -122,7 +122,7 @@ function draw() {
     }
   }
   else if (gameState === END) {
-      background();
+      background(backgroundImg);
       textSize(20);
       fill("black")
       text("Score: "+ score,30,50);
@@ -147,6 +147,7 @@ function draw() {
     }
   }
   else if(gameState === DONATE){
+    background(donateImage);
     gameOver.visible = false;
     restart.visible = false;
     donate.visible = true;
