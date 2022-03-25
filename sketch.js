@@ -151,6 +151,7 @@ function draw() {
     donate.visible = true;
     ground.visible = false;
     sun.visible = false;
+    invisibleGround.visible = false;
     obstaclesGroup.destroyEach();
     cloudsGroup.destroyEach();
   }
