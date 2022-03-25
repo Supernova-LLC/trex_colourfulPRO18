@@ -89,13 +89,13 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(backgroundImg);
-  textSize(20);
-  fill("black")
-  text("Score: "+ score,30,50);
   
   
   if (gameState===PLAY){
+      background(backgroundImg);
+      textSize(20);
+      fill("black")
+      text("Score: "+ score,30,50);
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
     
@@ -121,6 +121,10 @@ function draw() {
     }
   }
   else if (gameState === END) {
+      background(backgroundImg);
+      textSize(20);
+      fill("black")
+      text("Score: "+ score,30,50);
     gameOver.visible = true;
     restart.visible = true;
     
