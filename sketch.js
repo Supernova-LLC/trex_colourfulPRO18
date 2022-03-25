@@ -14,7 +14,6 @@ var jumpSound, collidedSound;
 
 var gameOver, restart;
 var donate;
-var donation;
 
 function preload(){
   jumpSound = loadSound("jump.wav")
@@ -27,8 +26,7 @@ function preload(){
   trex_collided = loadAnimation("trex_collided.png");
   
   groundImage = loadImage("ground.png");
-  donateImage = loadImage("donate.gif");
-  donationImage =loadImage("donation.webm")
+  donateImage = loadImage("donation.webm");
   cloudImage = loadImage("cloud.png");
   
   obstacle1 = loadImage("obstacle1.png");
@@ -147,10 +145,10 @@ function draw() {
     }
   }
   else if(gameState === DONATE){
-    background(donationImage);
+    background(donateImage);
     gameOver.visible = false;
     restart.visible = false;
-    donate.visible = false;
+    donate.visible = true;
     ground.visible = false;
     sun.visible = false;
     obstaclesGroup.destroyEach();
