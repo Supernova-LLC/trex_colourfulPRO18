@@ -77,7 +77,7 @@ function setup() {
 
   gameOver.visible = false;
   restart.visible = false;
-  
+  donate.visible = false;
  
   // invisibleGround.visible =false
 
@@ -138,10 +138,18 @@ function draw() {
     cloudsGroup.setLifetimeEach(-1);
     
      if(mousePressedOver(restart)) {
-      reset();
+      gameState = DONATE;
     }
   }
-  
+  else if(gameState === DONATE){
+    gameOver.visible = false;
+    restart.visible = false;
+    donate.visible = true;
+    ground.visible = false;
+    sun.visible = false;
+    cloudsGroup.visible = false;
+    obstaclesGroup.visible = false;
+  }
   
   drawSprites();
 }
@@ -197,8 +205,15 @@ function spawnObstacles() {
 }
 
 function reset(){
+  gameState = PLAY;
   gameOver.visible = false;
   restart.visible = false;
-  donate.visible = true;
+  
+  obstaclesGroup.destroyEach();
+  cloudsGroup.destroyEach();
+  
+  trex.changeAnimation("running",trex_running);
+  
+  score = 0;
   
 }
